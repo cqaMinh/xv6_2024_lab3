@@ -131,12 +131,9 @@ sys_pgaccess(void)
   int numpages;       // số trang
   uint64 user_mask;   // user-space buffer để ghi kết quả
 
-  if (argaddr(0, &addr) < 0)
-    return -1;
-  if (argint(1, &numpages) < 0)
-    return -1;
-  if (argaddr(2, &user_mask) < 0)
-    return -1;
+  argaddr(0, &addr);        // địa chỉ ảo bắt đầu
+  argint(1, &numpages);     // số trang
+  argaddr(2, &user_mask);   // địa chỉ buffer trong user-space
 
   if (numpages > 64) // giới hạn tối đa 64 pages (tương ứng 64 bit)
     return -1;

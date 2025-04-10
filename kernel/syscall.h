@@ -37,5 +37,4 @@
 #define SYS_kpgtbl    34
 #define SYS_pgaccess 35  
 
-int sys_pgaccess(void);
 

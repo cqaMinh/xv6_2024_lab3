@@ -111,6 +111,7 @@ extern uint64 sys_recv(void);
 #ifdef LAB_PGTBL
 extern uint64 sys_pgpte(void);
 extern uint64 sys_kpgtbl(void);
+extern uint64 sys_pgaccess(void);
 #endif
 
 // An array mapping syscall numbers from syscall.h
@@ -137,7 +138,6 @@ static uint64 (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
-[SYS_pgaccess]    sys_pgaccess,
 #ifdef LAB_NET
 [SYS_bind] sys_bind,
 [SYS_unbind] sys_unbind,
@@ -147,6 +147,7 @@ static uint64 (*syscalls[])(void) = {
 #ifdef LAB_PGTBL
 [SYS_pgpte] sys_pgpte,
 [SYS_kpgtbl] sys_kpgtbl,
+[SYS_pgaccess] sys_pgaccess,
 #endif
 };
 

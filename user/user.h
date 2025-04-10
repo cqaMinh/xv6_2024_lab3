@@ -36,6 +36,7 @@ int recv(uint32, uint32*, uint32*, char *, uint32);
 int ugetpid(void);
 uint64 pgpte(void*);
 void kpgtbl(void);
+int pgaccess(void *start, int n, unsigned int *bitmap);
 #endif
 
 // ulib.c
